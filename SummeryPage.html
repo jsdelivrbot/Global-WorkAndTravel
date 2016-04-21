@@ -1,0 +1,76 @@
+<!-- 
+Written by: Saeed Ghiassy
+Date: 14/Apr/2016
+-->
+<!DOCTYPE html>
+<html ng-app="ngTableTutorial">
+
+    <!-- 
+    Including necessary CSS and JS files
+    -->
+    <head>
+        <title>Saeed Ghiassy</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.css">
+        <script src="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.js"></script>
+        <script src="js/main.js" type="text/javascript"></script>
+    </head>
+    <body>
+        
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header" >
+            <a class="navbar-brand" href="#">Global Work & Travel Co. Test    --By SaEeD :)</a>
+        </div>
+      </div>
+    </nav>
+        
+        <div class="container">
+            <h3><u>Summery Page</u></h3>
+            <div ng-controller="tableController">
+            
+            <h3><u>Summery Page</u></h3>
+ 
+            <table ng-table="usersTable" show-filter="true" class="table table-striped">
+   <tr ng-repeat="user in data">
+       <td data-title="'First Name'" sortable="'First_Name'" filter="{ 'First_Name': 'text' }">
+           {{user.First_Name}}
+       </td>
+       <td data-title="'Last Name'" sortable="'Last_Name'" filter="{ 'Last_Name': 'text' }" >
+           {{user.Last_Name}}
+       </td>
+       <td data-title="'Age'" sortable="'Age'" >
+           {{user.Age}}
+       </td> 
+       <td data-title="'Email'" sortable="'Email'" filter="{ 'Email': 'text' }" >
+           {{user.Email}}
+       </td> 
+       <td data-title="'Country'" sortable="'Country'" filter="{ 'Country': 'text' }" >
+           {{user.Country}}
+       </td>
+       <td data-title="'Phone'" sortable="'Phone'" >
+           {{user.Phone}}
+       </td>
+       <td data-title="'Date'" sortable="'Date'" filter="{ 'Date': 'text' }" >
+           {{user.Date}}
+       </td> 
+   </tr>
+</table>
+            </div>
+        </div>
+        
+        <div class="container">
+      
+      <hr>
+
+      <footer>
+        <p>&copy; SaEeD 2016</p>
+      </footer>
+    </div>
+        
+    </body>
+</html>

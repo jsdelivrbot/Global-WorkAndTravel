@@ -1,0 +1,178 @@
+<!-- 
+Written by: Saeed Ghiassy
+Date: 14/Apr/2016
+-->
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<!-- 
+Including necessary CSS and JS files
+-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Saeed Ghiassy</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 50px;
+                padding-bottom: 20px;
+            }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+    </head>
+    <body>
+        
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header" >
+            <a class="navbar-brand" href="#">Global Work & Travel Co. Test    --By SaEeD :)</a>
+        </div>
+      </div>
+    </nav>
+
+    
+    <div class="jumbotron">
+      <div class="container">
+        <h2>Input Form</h2>
+        
+        
+        <table class="table">
+    <thead>
+      <tr>
+        <th>Input Table</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="info">
+        <td>First Name: </td>
+        <td><input type="text" placeholder="First Name" class="form-control" id="FirstName"></td>
+      </tr>
+      <tr class="info">
+        <td>Last Name: </td>
+        <td><input type="text" placeholder="Last Name" class="form-control" id="LastName"></td>
+      </tr>
+      <tr class="info">
+        <td>Age: </td>
+        <td><input type="number" placeholder="Age" class="form-control" id="Age"></td>
+      </tr>
+      <tr class="info">
+        <td>Email: </td>
+        <td><input type="email" placeholder="Email" class="form-control" id="Email"></td>
+      </tr>
+      <tr class="info">
+        <td>Country: </td>
+        <td>
+            
+    <div class="form-group">
+      <select class="form-control" id="Country">
+        <option>Australia</option>
+        <option>UK</option>
+        <option>Canada</option>
+      </select>
+        </td>
+      </tr>
+      <tr class="info">
+        <td>Phone: </td>
+        <td><input type="number" placeholder="Phone Number" class="form-control" id="Phone"></td>
+      </tr>
+      <tr class="info">
+        <td>Date:</td>
+        <td><input type="date" class="form-control" onfocus="today();" id="Date"></td>
+      </tr>
+    </tbody>
+  </table>
+            <button  type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="showModalButton">Submit &raquo;</button>
+        </div>
+
+     <!-- ////////////////////////////////////////////////////////////////////////// -->       
+     <!-- Connecting to Node Server File on port 3030 to set new data to save to database -->       
+     <form class="form-horizontal" role="form" method="POST" action="http://127.0.0.1:3030/setNode">
+     <!-- ////////////////////////////////////////////////////////////////////////// -->    
+     
+     
+    <!-- ////////////////////Passing Data to Modal Dialog for checking ///////////////////////////////// -->                
+   <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">CONFIRMATION / OVERVIEW</h4>
+        </div>
+        <div class="modal-body">
+          <p>Please confirm if inputs are correct ?</p>
+
+          
+          <table class="table">
+    <tbody>
+      <tr class="success">
+        <td>First Name: </td>
+        <td><input type="text" class="form-control" id="modalFirstName" name="FirstName" readonly></td>
+      </tr>
+      <tr class="success">
+        <td>Last Name: </td>
+        <td><input type="text" class="form-control" id="modalLastName" name="LastName" readonly></td>
+      </tr>
+      <tr class="success">
+        <td>Age: </td>
+        <td><input type="number" class="form-control" id="modalAge" name="Age" readonly></td>
+      </tr>
+      <tr class="success">
+        <td>Email: </td>
+        <td><input type="email" class="form-control" id="modalEmail" name="Email" readonly></td>
+      </tr>
+      <tr class="success">
+        <td>Country: </td>
+        <td><input type="text" class="form-control" id="modalCountry" name="Country" readonly></td>
+      </tr>
+      <tr class="success">
+        <td>Phone: </td>
+        <td><input type="number" class="form-control" id="modalPhone" name="Phone" readonly></td>
+      </tr>
+      <tr class="success">
+        <td>Phone: </td>
+        <td><input type="date" class="form-control" id="modalDate" name="Date" readonly></td>
+      </tr>
+    </tbody>
+  </table>
+
+          
+          
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary btn-lg" id="SubmitBtn" value="send" >Save!</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+     </form>              
+                
+    </div>
+
+    <div class="container">
+      
+      <hr>
+
+      <footer>
+        <p>&copy; SaEeD 2016</p>
+      </footer>
+    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
+        
+        <!-- ///////////////JS Library and JS custom file to parse data //////////////////////// -->    
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+</html>
